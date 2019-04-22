@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-#   resources :artists, only: [:index, :show, :new, :create, :update, :edit]
-# resources :genres, only: [:index, :show, :new, :create, :update, :edit]
-# resources :songs, only: [:index, :show, :new, :create, :update, :edit]
+resources :genres, only: [:index, :show, :new, :create, :edit, :update]
+  resources :artists, only: [:index, :show, :new, :create, :edit, :update]
+  resources :songs, only: [:index, :show, :new, :create, :edit, :update]
 
 
   get 'songs/index'
@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get 'songs/edit'
 
   get 'genres/index'
+  get '/genres/new', to: 'genres#create'
+  get '/genres/:id' , to: 'genres#show'
 
   get 'genres/show'
 
@@ -29,14 +31,14 @@ Rails.application.routes.draw do
   get 'genres/edit'
 
   get 'artists/index'
-  get '/artists/new', to: 'artists#create'
+  get '/artists/new', to: 'artists#new'
   get '/artists/:id' , to: 'artists#show'
 
   get 'artists/show'
 
   get 'artists/new'
 
-  get 'artists/create'
+  get 'artists/create', to: 'artists#create' , as: 'create_artists_path'
 
   get 'artists/update'
 
