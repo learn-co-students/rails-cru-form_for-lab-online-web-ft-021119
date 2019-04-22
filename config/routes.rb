@@ -38,7 +38,7 @@ resources :genres, only: [:index, :show, :new, :create, :edit, :update]
 
   get 'artists/new'
 
-  get 'artists/create', to: 'artists#create' , as: 'create_artists_path'
+  get 'artists/create'
 
   get 'artists/update'
 

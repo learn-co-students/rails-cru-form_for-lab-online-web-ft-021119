@@ -2,7 +2,7 @@ class ArtistsController < ApplicationController
   def index
     @artists = Artist.all
   end
-
+ 
   
 
   def new
@@ -16,11 +16,14 @@ class ArtistsController < ApplicationController
     @artist.save
      redirect_to artist_path(@artist)
     end
-
-
     def show
     @artist = Artist.find_by(params[:id])
+   
+   
   end
+
+
+   
 
 
   def edit
