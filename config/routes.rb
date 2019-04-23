@@ -1,48 +1,50 @@
 Rails.application.routes.draw do
-resources :genres, only: [:index, :show, :new, :create, :edit, :update]
-  resources :artists, only: [:index, :show, :new, :create, :edit, :update]
-  resources :songs, only: [:index, :show, :new, :create, :edit, :update]
 
 
-  get 'songs/index'
+ resources :artists
+ resources :genres
+ resources :songs
 
-  get 'songs/show'
 
-  get 'songs/new'
+#   get 'songs/index'
 
-  get 'songs/create'
+#   get 'songs/show'
 
-  get 'songs/update'
+#   get 'songs/new'
 
-  get 'songs/edit'
+#   get 'songs/create'
 
-  get 'genres/index'
-  get '/genres/new', to: 'genres#create'
-  get '/genres/:id' , to: 'genres#show'
+#   get 'songs/update'
 
-  get 'genres/show'
+#   get 'songs/edit'
 
-  get 'genres/new'
+#   get 'genres/index'
+#   get '/genres/new', to: 'genres#create'
+#   get '/genres/:id' , to: 'genres#show'
 
-  get 'genres/create'
+#   get 'genres/show'
 
-  get 'genres/update'
+#   get 'genres/new'
 
-  get 'genres/edit'
+#   get 'genres/create'
 
-  get 'artists/index'
-  get '/artists/new', to: 'artists#new'
-  get '/artists/:id' , to: 'artists#show'
+#   get 'genres/update'
 
-  get 'artists/show'
+#   get 'genres/edit'
 
-  get 'artists/new'
+#   get 'artists/index'
+#   get '/artists/new', to: 'artists#new'
+# get '/artists/:id' , to: 'artists#show'
 
-  get 'artists/create'
+#   get 'artists/show'
 
-  get 'artists/update'
+#   get 'artists/new'
 
-  get 'artists/edit'
+#   get 'artists/create'
+
+#   get 'artists/update'
+
+#   get 'artists/edit'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
