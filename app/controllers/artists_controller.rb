@@ -12,8 +12,7 @@ class ArtistsController < ApplicationController
 
         def show
             @artist = Artist.find(params[:id])
-            # binding.pry
-            # binding.pry
+            binding.pry
         end
 
         def edit
