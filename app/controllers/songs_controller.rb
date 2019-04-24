@@ -1,5 +1,6 @@
+require 'pry'
 class SongsController < ApplicationController
-ef new
+    def new
         @song = Song.new
     end
 
@@ -21,7 +22,7 @@ ef new
         def update
             @song = Song.find(params[:id])
             @song.update(song_params(:name, :bio))
-            # binding.pry
+            binding.pry
             redirect_to artist_path(@song)
         end
 
