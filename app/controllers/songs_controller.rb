@@ -12,7 +12,8 @@ class SongsController < ApplicationController
 
         def show
             @song = Song.find(params[:id])
-            # binding.pry
+            @genre = @song.genre
+            @artist = @song.artist
         end
 
         def edit
@@ -22,7 +23,7 @@ class SongsController < ApplicationController
         def update
             @song = Song.find(params[:id])
             @song.update(song_params(:name, :bio))
-            binding.pry
+            # binding.pry
             redirect_to artist_path(@song)
         end
 

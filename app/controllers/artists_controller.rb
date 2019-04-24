@@ -1,3 +1,4 @@
+require 'pry'
 class ArtistsController < ApplicationController
      def new
         @artist = Artist.new
@@ -11,6 +12,7 @@ class ArtistsController < ApplicationController
 
         def show
             @artist = Artist.find(params[:id])
+            # binding.pry
             # binding.pry
         end
 
