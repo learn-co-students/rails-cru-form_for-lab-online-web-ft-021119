@@ -7,12 +7,14 @@ class ArtistsController < ApplicationController
         def create
             @artist = Artist.new(artist_params(:name, :bio))
             @artist.save
+            # binding.pry
             redirect_to artist_path(@artist)
         end
 
         def show
+            # binding.pry
             @artist = Artist.find(params[:id])
-            binding.pry
+            # binding.pry
         end
 
         def edit
